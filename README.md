@@ -7,5 +7,5 @@ Los juegos que vamos a realizar son:
 - Tic Tac Toe
 - Piedra Papel o Tijera
 - Snake
-- Pong
+- Ahorcado
 
