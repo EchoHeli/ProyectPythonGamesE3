@@ -1,13 +1,24 @@
-﻿El videojuego es un tipo de ping pong ya que es una pelota que rebota en un rectángulo y luego rebota en otro y así sucesivamente. El juego consiste en que tu mueves los rectángulos que se muestran en la pantalla y tratas que la pelota no se te escape.
+El juego del ahorcado es un clásico de los juegos de palabras. Consiste en adivinar una palabra oculta, letra por letra, antes de que se complete el dibujo del ahorcado. Este proyecto es interesante porque:
+Permite practicar estructuras básicas de programación en Python como condicionales, bucles, listas y cadenas.
+    Desarrolla la lógica de control de flujo al manejar intentos, letras correctas e incorrectas.
+    Se presta para añadir mejoras creativas (interfaces gráficas, niveles de dificultad, pistas, etc.).
+    Es un ejemplo perfecto de cómo convertir un juego tradicional en una aplicación computacional.
 
-Escogí el juego de ping pong ya que se me hace un juego bastante entretenido y en el que debes de poner mucha atención a la pelota. A lo largo de programar este juego me ayudará a repasar todos mis conocimientos que tengo de python y también me ayudará a adquirir otros nuevos como el de toma decisiones, bucles y funciones.
+Algoritmo del proyecto
+Inicio
+  Seleccionar una palabra secreta de una lista de palabras predefinida.
+    Inicializar las variables:
+    Lista de letras adivinadas.
+    Número máximo de intentos.
 
-**Algoritmo**
-
-1. Definir los 2 rectángulos y la pelota
-1. Definimos las coordenadas  en donde empezará la pelota 
-1. Definimos la dirección a la cual empezará a ir la pelota
-1. Hacemos que la pelota vaya yendo más rápido en cuanto rebote en los rectángulos.
-1. Definir las teclas para que los rectángulos puedan subir y bajar  
-1. Si la pelota no toca un rectángulo fin del juego
-1. Poner en la pantalla la puntuación obtenida
+Mostrar al usuario la palabra oculta con guiones bajos por cada letra no adivinada.
+Mientras queden intentos y no se haya adivinado la palabra:
+Pedir al usuario que ingrese una letra.
+Verificar si la letra está en la palabra secreta.
+Si está, mostrarla en su posición correspondiente.
+Si no está, reducir el número de intentos restantes y actualizar el dibujo del ahorcado.
+Mostrar las letras ya utilizadas y los intentos restantes.
+Si el usuario adivinó la palabra completa antes de quedarse sin intentos:
+Mostrar mensaje de “¡Ganaste!”.
+Si el usuario se queda sin intentos:
+Mostrar mensaje de “¡Perdiste!” y revelar la palabra.
