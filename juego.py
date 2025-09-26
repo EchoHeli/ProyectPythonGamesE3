@@ -112,5 +112,7 @@ def snake ():
                 time.sleep(0.1)  # Pausa el programa antes de su ejecucción, para que no se confunda el usuario
 
     main()
+#_________________________________________________________________________________________________________________________________________
 main()
+
 
