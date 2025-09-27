@@ -79,5 +79,3 @@ def pruebas():
 
 
     pruebas()
-
-main()
