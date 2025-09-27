@@ -76,6 +76,3 @@ def pruebas():
     assert resultado == "j u e g o"
 
     print("Todas las pruebas pasaron correctamente.")
-
-
-    pruebas()
