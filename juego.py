@@ -2,7 +2,7 @@ def menu ():
     print ("1.Snake")
     print ("2.Tic Tac Toe")
     print ("3.Piedra Papel o Tijera")
-    print ("4.Aorcado")
+    print ("4.Ahorcado")
 def main ():
     menu ()
     opcion = int (input ("¿Qué quieres jugar? "))
@@ -114,5 +114,6 @@ def snake ():
     main()
 #_________________________________________________________________________________________________________________________________________
 main()
+
 
 
