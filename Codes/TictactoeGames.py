@@ -95,4 +95,3 @@ def jugar():
             mostrar_tablero(tablero)
             print("\nEmpate.")
             break
-jugar()

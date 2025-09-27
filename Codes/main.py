@@ -31,8 +31,6 @@ def main():
         snake.main()
     elif opt == 4:
         TictactoeGames.jugar()
-main()
-    
-    
 
-
+main()   
+    
