@@ -1,6 +1,7 @@
 import juegoppt
 import juegoahorcado
 import snake
+import TictactoeGames
 
 def menu():
     print("""Elige que juego quieres jugar:
@@ -28,6 +29,10 @@ def main():
         juegoppt.main()
     elif opt == 3:
         snake.main()
+    elif opt == 4:
+        TictactoeGames.jugar()
+if __name__ == "__main__":
+    main()
     
     
 
