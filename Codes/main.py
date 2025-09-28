@@ -11,9 +11,9 @@ def menu():
 4. Tic Tac Toe""")
     
 def main():
-    menu()
-    opt = int(input(""))
     while True:
+        menu()
+        opt = int(input(""))
         if opt == 1:
             opt2 = input("Caso de prueba? (y/n): ")
             opt2 = opt2.lower()
@@ -36,6 +36,7 @@ def main():
         elif opt == 4:
             TictactoeGames.jugar()
             break
-""
-main() 
+        else:
+            print("Opción incorrecta, intente de nuevo\n")
 
+main()  
