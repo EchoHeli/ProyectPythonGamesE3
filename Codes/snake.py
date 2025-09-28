@@ -3,22 +3,24 @@ import time
 import os
 import platform
 
-print (""" REGLAS DEL JUEGO
-Para moverte usa w,s,a,d de tu teclado:
-w - Ariba
-s - Abajo
-a - Izquierda
-d - Derecha
-Usa solo minusculas
-Para moverte escribe (Letra) (numero de espacios que deseas moverte)
-Ej. s 4, w 3, a 6, d 1
-Come el * para que tu serpiente cresca
-+ es la cabeza de tu serpiente y cuando comas un * tu serpiente gana un -
-Tienes que crecer hasta llenar el tablero
-NO puedes chocar con el limite, ni contra ti mismo
-¡MUCHA SUERTE!
 
-""")
+def instructions_snake():
+    print (""" REGLAS DEL JUEGO
+    Para moverte usa w,s,a,d de tu teclado:
+    w - Ariba
+    s - Abajo
+    a - Izquierda
+    d - Derecha
+    Usa solo minusculas
+    Para moverte escribe (Letra) (numero de espacios que deseas moverte)
+    Ej. s 4, w 3, a 6, d 1
+    Come el * para que tu serpiente cresca
+    + es la cabeza de tu serpiente y cuando comas un * tu serpiente gana un -
+    Tienes que crecer hasta llenar el tablero
+    NO puedes chocar con el limite, ni contra ti mismo
+    ¡MUCHA SUERTE!
+
+    """)
 
 def limpiar_pantalla():
         os.system("cls") # Para borrrar mi tablero anterior
@@ -66,6 +68,8 @@ def main():
     limpiar_pantalla()
     mostrar_tablero(ancho, alto, snake, manzana)
 
+    instructions_snake()
+
     while True:
         entrada = input("Dirección y pasos (ej. w 3): ").split()
 
@@ -96,6 +100,3 @@ def main():
             limpiar_pantalla()
             mostrar_tablero(ancho, alto, snake, manzana)
             time.sleep(0.1) # Pausa el programa antes de su ejecucción, para que no se confunda el usuario
-
-
-main()

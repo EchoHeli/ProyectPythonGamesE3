@@ -66,6 +66,10 @@ def jugar():
     jugador = "X"
 
     while True:
+        if jugador == "X":
+            jugador = "O"
+        else:
+            jugador = "X"
         mostrar_tablero(tablero)
         print(f"\nTurno de {jugador}")
         try:

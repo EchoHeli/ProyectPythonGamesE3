@@ -15,7 +15,7 @@ def main():
     opt = int(input(""))
     while True:
         if opt == 1:
-            opt2 = int(input("Caso de prueba? (y/n): "))
+            opt2 = input("Caso de prueba? (y/n): ")
             opt2 = opt2.lower()
             while True:
                 if opt2 == "y":
@@ -26,8 +26,9 @@ def main():
                     break
                 else:
                     print("Opción incorrecta, intente de nuevo\n")
+            break
         elif opt == 2:
-            juegoppt.main()
+            juegoppt.mainppt()
             break
         elif opt == 3:
             snake.main()
@@ -37,4 +38,3 @@ def main():
             break
 
 main() 
-
