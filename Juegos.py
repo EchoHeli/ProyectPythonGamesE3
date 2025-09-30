@@ -1,7 +1,7 @@
-import juegoppt
-import juegoahorcado
-import snake
-import TictactoeGames
+import Piedra_Papel_Tijera
+import Ahorcado
+from Snake import snake
+import Tic_Tac_Toe
 
 def menu():
     print("""Elige que juego quieres jugar:
@@ -19,22 +19,22 @@ def main():
             opt2 = opt2.lower()
             while True:
                 if opt2 == "y":
-                    juegoahorcado.pruebas()
+                    Ahorcado.pruebas()
                     break
                 elif opt2 == "n":
-                    juegoahorcado.main()
+                    Ahorcado.main()
                     break
                 else:
                     print("Opción incorrecta, intente de nuevo\n")
             break
         elif opt == 2:
-            juegoppt.mainppt()
+            Piedra_Papel_Tijera.mainppt()
             break
         elif opt == 3:
             snake.main()
             break
         elif opt == 4:
-            TictactoeGames.jugar()
+            Tic_Tac_Toe.jugar()
             break
         else:
             print("Opción incorrecta, intente de nuevo\n")
