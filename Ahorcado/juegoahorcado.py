@@ -1,7 +1,5 @@
 import random
 
-# Funciones principales del juego
-
 def seleccionar_palabra():
     
     "Selecciona y devuelve una palabra secreta al azar de una lista."
