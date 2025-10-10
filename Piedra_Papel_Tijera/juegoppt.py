@@ -202,30 +202,3 @@ def menuppt():
 2. Piedra Papel Tijera (Dificil)
 3. Piedra Papel Tijera Lagarto Spock""")
 
-def mainppt():
-        menuppt()
-        opt = int(input(""))
-        while True:
-                if opt == 1:
-                        n = int(input("Ingrese cuantos juegos quiere jugar en la serie (Impar): "))
-                        if n % 2 != 0:
-                                ppt(n)
-                                break
-                        else: 
-                                print("El numero de juegos en la serie debe de ser impar, intente de nuevo\n")
-                elif opt == 2:
-                        n = int(input("Ingrese cuantos juegos quiere jugar en la serie (Impar): "))
-                        if n % 2 != 0:
-                                pptdificil(n)
-                                break
-                        else: 
-                                print("El numero de juegos en la serie debe de ser impar, intente de nuevo\n") 
-                elif opt == 3:
-                        n = int(input("Ingrese cuantos juegos quiere jugar en la serie (Impar): "))
-                        if n % 2 != 0:
-                                pptls(n)
-                                break
-                        else: 
-                                print("El numero de juegos en la serie debe de ser impar, intente de nuevo\n") 
-                else:
-                        print("Opción invalida, intente de nuevo")
