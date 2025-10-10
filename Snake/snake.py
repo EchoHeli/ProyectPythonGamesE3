@@ -23,9 +23,9 @@ def instructions_snake():
     """)
 
 def limpiar_pantalla():
-        os.system("cls") # Para borrrar mi tablero anterior
+        os.system("cls" if os.name == "nt" else "clear") # Para borrrar mi tablero anterior
 
-def mostrar_tablero(ancho, alto, snake, manzana):
+def mostrar_tablero(ancho, alto, snake, manzana,puntos):
     print("+" + "-" * ancho + "+")  # Limite de mi tablero superior
     for i in range(alto):
         fila = "|" # Limite izquierdo
@@ -39,6 +39,7 @@ def mostrar_tablero(ancho, alto, snake, manzana):
         fila += "|" # Limite derecho
         print(fila)
     print("+" + "-" * ancho + "+")  # borde inferior
+    print(f"Puntos: {puntos}")
 
 def mover(direccion, cabeza):
     if direccion == 'w':  # arriba
@@ -57,34 +58,31 @@ def nueva_manzana(alto, ancho, snake):
         if manzana not in snake: #Si la serpiente no esta en las cordenadas de la manzana
             return manzana #Las cordenadas de la manzan se quedan igual
 def seleccionar_dificultad(dificultad):
-    dificultad = input("¿Qué nivel te gustaría jugar? (Fácil / Media / Difícil): ").lower()
-    if dificultad in ["fácil", "facil"]:
-        return (30, 10)
-    elif dificultad == "media":
-        return (20, 7)
-    elif dificultad in ["difícil", "dificil"]:
-        return (10, 6)
+    dificultad = dificultad.lower()
+    if dificultad in ["fácil", "facil","Fácil","Facil","FÁCIL","FACIL"]:
+        return (15 , 50)
+    elif dificultad in ["media","Media","MEDIA"]:
+        return (8, 35)
+    elif dificultad in ["difícil", "dificil","DIFICIL","DIFÍCIL"]:
+        return (5, 25)
     else:
-        print("Dificultad no válida. Se usará 'Media' por defecto.")
-        return (20, 7)
+        print("Dificultad no válida. Se usará 'Media' por defecto")
+        return (8, 35)
 
 def main():
-#Variables
-    ancho = 0
-    alto = 0
-    snake = [[5, 5]]
-    direccion = 'd'
+    instructions_snake()
 
     # Modo de dificultad
     dificultad = input("¿Qué nivel te gustaría jugar? (Fácil / Media / Difícil): ")
-    alto, ancho = dificultadJuego(dificultad)
-
+    alto, ancho = seleccionar_dificultad(dificultad)
+    
+    snake = [[alto // 2, ancho // 2]]
+    direccion='d'
+    puntos= 0
     manzana = nueva_manzana(alto, ancho, snake)
 
     limpiar_pantalla()
-    mostrar_tablero(ancho, alto, snake, manzana)
-
-    instructions_snake()
+    mostrar_tablero(ancho, alto, snake, manzana, puntos)
 
     while True:
         entrada = input("Dirección y pasos (ej. w 3): ").split()
@@ -103,16 +101,25 @@ def main():
                 nueva_cabeza[0] < 0 or nueva_cabeza[0] >= alto or #Te saliste del tablero (arriba y abajo)
                 nueva_cabeza[1] < 0 or nueva_cabeza[1] >= ancho): # Te saliste del tablero (izquierda y derecha)
                 print("Ups. Tu serpiente ha chocado :(")
+                print(f"Puntaje final: {puntos}")
                 print("Game Over")
                 return
 
             snake.insert(0, nueva_cabeza) #Agrega nuevo valor "-" a la lista de snake
 
             if nueva_cabeza == manzana: #Cabeza y manzana en la mismas cordenadas
+                puntos += 1
+                print("Ñomi, has comido una manzana :P ")
+                print("¡Ganaste un punto!")
+                time.sleep(2)
                 manzana = nueva_manzana(alto, ancho, snake) # Se aparece nueva manzana y crece la serpientee
             else:
                 snake.pop() # Elimina la ultima parte de la lista ... quita el nuevo cuerpo de la serpiente, pq no comió
-
+        if len(snake) == alto * ancho:
+                print("¡Felicidades! Has llenado el tablero 🎉")
+                print(f"Puntaje final: {puntos}")
+                return
             limpiar_pantalla()
-            mostrar_tablero(ancho, alto, snake, manzana)
+            mostrar_tablero(ancho, alto, snake, manzana,puntos)
             time.sleep(0.1) # Pausa el programa antes de su ejecucción, para que no se confunda el usuario
+main()
