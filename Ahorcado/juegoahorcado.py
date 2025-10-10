@@ -1,10 +1,7 @@
 import random
 
-# Función para seleccionar una palabra secreta de manera aleatoria
+# Función para seleccionar una palabra secreta
 def seleccionar_palabra():
-    """
-    Selecciona y devuelve una palabra secreta al azar de una lista ampliada.
-    """
     palabras = [
         "python", "programacion", "ahorcado", "juego", "computadora",
         "comer", "teclado", "raton", "monitor", "internet",
@@ -14,10 +11,6 @@ def seleccionar_palabra():
 
 # Función para mostrar el progreso del jugador
 def mostrar_progreso(palabra_secreta, letras_adivinadas):
-    """
-    Devuelve la palabra secreta con guiones bajos en lugar de las letras
-    que aún no han sido adivinadas.
-    """
     progreso = ""
     for letra in palabra_secreta:
         if letra in letras_adivinadas:
@@ -28,12 +21,6 @@ def mostrar_progreso(palabra_secreta, letras_adivinadas):
 
 # Función para validar la entrada del usuario
 def validar_entrada(letra, letras_adivinadas):
-    """
-    Valida que la letra ingresada sea correcta:
-    - Solo una letra
-    - No repetida
-    - Letra del alfabeto
-    """
     if len(letra) != 1 or not letra.isalpha():
         return "no_valida"
     elif letra in letras_adivinadas:
@@ -41,11 +28,8 @@ def validar_entrada(letra, letras_adivinadas):
     else:
         return "valida"
 
-# Función principal del juego
+# Función principal del juego del ahorcado
 def jugar_ahorcado():
-    """
-    Controla el flujo principal del juego del ahorcado.
-    """
     palabra = seleccionar_palabra()
     letras_adivinadas = []
     intentos_restantes = 6
@@ -76,4 +60,3 @@ def jugar_ahorcado():
             print("La letra no está en la palabra.")
 
     print("\nTe quedaste sin intentos. La palabra era:", palabra)
-
