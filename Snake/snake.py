@@ -56,13 +56,29 @@ def nueva_manzana(alto, ancho, snake):
         manzana = [random.randint(0, alto - 1), random.randint(0, ancho - 1)] # Escoge una fila y columana aleatroria y las hace cordenadas (fila, columna)
         if manzana not in snake: #Si la serpiente no esta en las cordenadas de la manzana
             return manzana #Las cordenadas de la manzan se quedan igual
+def seleccionar_dificultad(dificultad):
+    dificultad = input("¿Qué nivel te gustaría jugar? (Fácil / Media / Difícil): ").lower()
+    if dificultad in ["fácil", "facil"]:
+        return (30, 10)
+    elif dificultad == "media":
+        return (20, 7)
+    elif dificultad in ["difícil", "dificil"]:
+        return (10, 6)
+    else:
+        print("Dificultad no válida. Se usará 'Media' por defecto.")
+        return (20, 7)
 
 def main():
 #Variables
-    ancho = 30
-    alto = 10
+    ancho = 0
+    alto = 0
     snake = [[5, 5]]
     direccion = 'd'
+
+    # Modo de dificultad
+    dificultad = input("¿Qué nivel te gustaría jugar? (Fácil / Media / Difícil): ")
+    alto, ancho = dificultadJuego(dificultad)
+
     manzana = nueva_manzana(alto, ancho, snake)
 
     limpiar_pantalla()
