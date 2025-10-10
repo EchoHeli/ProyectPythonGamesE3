@@ -1,5 +1,5 @@
 import Piedra_Papel_Tijera
-import Ahorcado
+from ahorcado import jugar_ahorcado
 from Snake import snake
 import Tic_Tac_Toe
 
