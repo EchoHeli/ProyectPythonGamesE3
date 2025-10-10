@@ -77,35 +77,3 @@ def jugar_ahorcado():
 
     print("\nTe quedaste sin intentos. La palabra era:", palabra)
 
-# Función de pruebas para verificar cada función del juego
-def pruebas():
-    """
-    Realiza pruebas de las funciones para verificar su correcto funcionamiento.
-    """
-    print("Pruebas de seleccionar_palabra():")
-    palabra = seleccionar_palabra()
-    assert palabra in [
-        "python", "programacion", "ahorcado", "juego", "computadora",
-        "comer", "teclado", "raton", "monitor", "internet",
-        "variable", "funcion", "algoritmo", "desarrollador", "software"
-    ], "Error: palabra no válida"
-    print("✓ seleccionar_palabra funciona correctamente.")
-
-    print("\nPruebas de mostrar_progreso():")
-    assert mostrar_progreso("python", ["p", "y"]) == "p y _ _ _ _", "Error en mostrar_progreso"
-    assert mostrar_progreso("juego", []) == "_ _ _ _ _", "Error en mostrar_progreso"
-    print("✓ mostrar_progreso funciona correctamente.")
-
-    print("\nPruebas de validar_entrada():")
-    assert validar_entrada("a", []) == "valida", "Error en validar_entrada"
-    assert validar_entrada("aa", []) == "no_valida", "Error en validar_entrada"
-    assert validar_entrada("1", []) == "no_valida", "Error en validar_entrada"
-    assert validar_entrada("a", ["a"]) == "repetida", "Error en validar_entrada"
-    print("✓ validar_entrada funciona correctamente.")
-
-# Ejecutar pruebas (descomentar la siguiente línea para probar)
-# pruebas()
-
-# Ejecutar el juego
-if __name__ == "__main__":
-    jugar_ahorcado()
