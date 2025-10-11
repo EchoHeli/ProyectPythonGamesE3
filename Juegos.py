@@ -1,5 +1,5 @@
 from Piedra_Papel_Tijera import juegoppt
-from Ahorcado import jugar_ahorcado
+from ahorcado import main as ahorcado_main
 import Snake
 import Tic_Tac_Toe
 
@@ -19,7 +19,7 @@ def main():
             opt2 = opt2.lower()
             while True:
                 if opt2 == "n":
-                    Ahorcado.main()
+                     ahorcado_main()
                     break
                 else:
                     print("Opción incorrecta, intente de nuevo\n")
