@@ -116,7 +116,8 @@ def main():
             else:
                 snake.pop() # Elimina la ultima parte de la lista ... quita el nuevo cuerpo de la serpiente, pq no comió
         if len(snake) == alto * ancho:
-                print("¡Felicidades! Has llenado el tablero 🎉")
+                print("¡Felicidades! Has llenado todo el tablero :D")
+                print("¡Winer!")
                 print(f"Puntaje final: {puntos}")
                 return
             limpiar_pantalla()
