@@ -60,3 +60,7 @@ def jugar_ahorcado():
             print("La letra no está en la palabra.")
 
     print("\nTe quedaste sin intentos. La palabra era:", palabra)
+
+# MAIN LOCAL DEL JUEGO
+def main():
+    jugar_ahorcado()
