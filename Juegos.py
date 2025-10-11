@@ -18,10 +18,7 @@ def main():
             opt2 = input("Caso de prueba? (y/n): ")
             opt2 = opt2.lower()
             while True:
-                if opt2 == "y":
-                    Ahorcado.pruebas()
-                    break
-                elif opt2 == "n":
+                if opt2 == "n":
                     Ahorcado.main()
                     break
                 else:
