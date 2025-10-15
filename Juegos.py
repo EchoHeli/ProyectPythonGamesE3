@@ -57,6 +57,7 @@ def main():
             
                 # Modo de dificultad
                 dificultad = input("¿Qué nivel te gustaría jugar? (Fácil / Media / Difícil): ")
+                dificultad = dificultad.lower ()
                 alto, ancho = seleccionar_dificultad(dificultad)
             
                 snake = [[alto // 2, ancho // 2]]
