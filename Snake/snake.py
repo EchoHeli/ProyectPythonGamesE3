@@ -53,23 +53,9 @@ import platform
 
 
 def instructions_snake():
-    print (""" REGLAS DEL JUEGO
-    Para moverte usa w,s,a,d de tu teclado:
-    w - Ariba
-    s - Abajo
-    a - Izquierda
-    d - Derecha
-    Usa solo minusculas
-    Para moverte escribe (Letra) (numero de espacios que deseas moverte)
-    Ej. s 4, w 3, a 6, d 1
-    Come el * para que tu serpiente cresca
-    + es la cabeza de tu serpiente y cuando comas un * tu serpiente gana un -
-    Tienes que crecer hasta llenar el tablero
-    NO puedes chocar con el limite, ni contra ti mismo
-    ¡MUCHA SUERTE!
-
-    """)
-
+    instrucciones = open ("snake.txt","r")
+    reglas = instrucciones.read()
+    print (reglas)
 def limpiar_pantalla():
         os.system("cls" if os.name == "nt" else "clear") # Para borrrar mi tablero anterior
 
@@ -107,11 +93,11 @@ def nueva_manzana(alto, ancho, snake):
             return manzana #Las cordenadas de la manzan se quedan igual
 def seleccionar_dificultad(dificultad):
     dificultad = dificultad.lower()
-    if dificultad in ["fácil", "facil","Fácil","Facil","FÁCIL","FACIL"]:
+    if dificultad in ["fácil", "facil"]:
         return (15 , 50)
-    elif dificultad in ["media","Media","MEDIA"]:
+    elif dificultad in ["media"]:
         return (8, 35)
-    elif dificultad in ["difícil", "dificil","DIFICIL","DIFÍCIL"]:
+    elif dificultad in ["difícil", "dificil"]:
         return (5, 25)
     else:
         print("Dificultad no válida. Se usará 'Media' por defecto")
