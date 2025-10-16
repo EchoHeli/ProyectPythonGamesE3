@@ -60,20 +60,23 @@ def limpiar_pantalla():
         os.system("cls" if os.name == "nt" else "clear") # Para borrrar mi tablero anterior
 
 def mostrar_tablero(ancho, alto, snake, manzana,puntos):
-    print("+" + "-" * ancho + "+")  # Limite de mi tablero superior
+    print("+" + "-" * ancho + "+")  # Limite de mi tablero superior  # Limite de mi tablero superior #Se imprime de color amarillo
     for i in range(alto):
-        fila = "|" # Limite izquierdo
+        fila = "\033[93m|\033[0m" # Limite izquierdo #El borde es color amarillo
         for r in range(ancho):
             if [i, r] == manzana: # Cordenadas de la manzana
-                fila += "*" #Imprime la manzana
+                fila += "\033[91m*\033[0m" #Imprime la manzana de color rojo
             elif [i, r] in snake: #Cordenadas de la serpiente
-                fila += "-" if [i, r] != snake[0] else "+" # La cabeza es un "+", el resto del cuerpo sera "-"
+                if [i, r] == snake[0]:
+                    fila += "\033[92m+\033[0m"  # Cabeza de color verde
+                else:
+                    fila += "\033[92m-\033[0m"  # Cuerpo de color verde
             else:
                 fila += " " #Casilla vacia (no se dibuja nada)
-        fila += "|" # Limite derecho
+        fila += "\033[93m|\033[0m" # Limite derecho de color amarillo
         print(fila)
-    print("+" + "-" * ancho + "+")  # borde inferior
-    print(f"Puntos: {puntos}")
+    print("\033[93m+" + "-" * ancho + "+\033[0m")  # borde inferior de color amarillo
+    print("\033[95mPuntos: " + str(puntos) + "\033[0m") # Imprime el dialogo de puntos de color morado
 
 def mover(direccion, cabeza):
     if direccion == 'w':  # arriba
