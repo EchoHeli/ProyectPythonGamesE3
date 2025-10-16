@@ -53,13 +53,16 @@ import platform
 
 
 def instructions_snake():
+    """ Lee y muestra la instrucciones del juego desde el archivo 'snake.txt'."""
     instrucciones = open ("snake.txt","r")
     reglas = instrucciones.read()
     print (reglas)
 def limpiar_pantalla():
+    """Limpia la pantalla"""
         os.system("cls" if os.name == "nt" else "clear") # Para borrrar mi tablero anterior
 
 def mostrar_tablero(ancho, alto, snake, manzana,puntos):
+    """Imprime el tablero, la serpiente, la manzana, y el puntaje"""
     print("+" + "-" * ancho + "+")  # Limite de mi tablero superior  # Limite de mi tablero superior #Se imprime de color amarillo
     for i in range(alto):
         fila = "\033[93m|\033[0m" # Limite izquierdo #El borde es color amarillo
@@ -79,6 +82,7 @@ def mostrar_tablero(ancho, alto, snake, manzana,puntos):
     print("\033[95mPuntos: " + str(puntos) + "\033[0m") # Imprime el dialogo de puntos de color morado
 
 def mover(direccion, cabeza):
+    """Actualiza la nueva posición de la cabeza de la serpiente conforme las instrucciones que da el usuario"""
     if direccion == 'w':  # arriba
         return [cabeza[0] - 1, cabeza[1]]
     elif direccion == 's':  # abajo
@@ -90,11 +94,13 @@ def mover(direccion, cabeza):
     return cabeza
 
 def nueva_manzana(alto, ancho, snake):
+    """Genera una nueva manzana en una posición aleatoria donde no este la serpiente"""
     while True:
         manzana = [random.randint(0, alto - 1), random.randint(0, ancho - 1)] # Escoge una fila y columana aleatroria y las hace cordenadas (fila, columna)
         if manzana not in snake: #Si la serpiente no esta en las cordenadas de la manzana
             return manzana #Las cordenadas de la manzan se quedan igual
 def seleccionar_dificultad(dificultad):
+    """Define el tamaño deñ tablero según la dificultad"""
     dificultad = dificultad.lower()
     if dificultad in ["fácil", "facil"]:
         return (15 , 50)
