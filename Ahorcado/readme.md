@@ -48,5 +48,3 @@ Mientras queden intentos:
 
 Si el jugador se queda sin intentos, el juego termina mostrando el mensaje:
 “Te quedaste sin intentos. La palabra era: [palabra secreta]”.
-
-La función main() del archivo del ahorcado no ejecuta el juego automáticamente, sino que únicamente llama a la función jugar_ahorcado() cuando es invocada desde un main general que contiene todos los juegos del proyecto.
