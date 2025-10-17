@@ -59,7 +59,7 @@ def instructions_snake():
     print (reglas)
 def limpiar_pantalla():
     """Limpia la pantalla"""
-        os.system("cls" if os.name == "nt" else "clear") # Para borrrar mi tablero anterior
+    os.system("cls" if os.name == "nt" else "clear") # Para borrrar mi tablero anterior
 
 def mostrar_tablero(ancho, alto, snake, manzana,puntos):
     """Imprime el tablero, la serpiente, la manzana, y el puntaje"""
