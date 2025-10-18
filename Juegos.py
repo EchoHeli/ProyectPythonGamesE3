@@ -154,7 +154,8 @@ def main():
         elif opt == 4:
             Tic_Tac_Toe.jugar()
         elif opt == 5:
-            import Memorama.memorama as Memorama
+            import Memorama.Memorama as Memorama
+        
             print("Has elegido el juego de Memorama ")
             Memorama.jugar_memorama()
         elif opt == 6:
