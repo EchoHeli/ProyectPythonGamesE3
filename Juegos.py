@@ -20,6 +20,12 @@ def main():
             while True:
                 if opt2 == "n":
                      Juegoahorcado.main()
+                    loop = input("¿Desea volver al menu principal? (y/n): ")
+                    loop = lopp.lower()
+                    if loop =="y":
+                        continue
+                    else:
+                        print("Gracias por jugar!")
                     break
                 else:
                     print("Opción incorrecta, intente de nuevo\n")
