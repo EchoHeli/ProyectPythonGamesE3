@@ -2,6 +2,7 @@ import Ahorcado.juegoahorcado as Juegoahorcado
 import Piedra_Papel_Tijera.juegoppt as juegoppt
 import Snake.snake as Snake
 import Tic_Tac_Toe.TictactoeGames as Tic_Tac_Toe
+import Memorama.Memorama as Memorama
 import time
 
 def menu():
@@ -154,8 +155,6 @@ def main():
         elif opt == 4:
             Tic_Tac_Toe.jugar()
         elif opt == 5:
-            import Memorama.Memorama as Memorama
-        
             print("Has elegido el juego de Memorama ")
             Memorama.jugar_memorama()
         elif opt == 6:
@@ -172,6 +171,5 @@ def main():
         if (RespuestaContinuarJugando == 'no'):
             print("Gracias por jugar. ¡Hasta luego!")
             continuarJugando = False
-
 
 main()  
