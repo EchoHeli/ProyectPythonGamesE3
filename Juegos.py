@@ -38,26 +38,50 @@ def main():
                         n = int(input("Ingrese cuantos juegos quiere jugar en la serie (Impar): "))
                         if n % 2 != 0:
                                 juegoppt.ppt(n)
-                                break
+                                loop = input("¿Desea volver a jugar? (y/n): ")
+                                loop = loop.lower() 
+                                if loop =="y":
+                                    continue
+                                else:
+                                    print("Gracias por jugar!")
+                                    break
                         else: 
                                 print("El numero de juegos en la serie debe de ser impar, intente de nuevo\n")
                 elif opt == 2:
                         n = int(input("Ingrese cuantos juegos quiere jugar en la serie (Impar): "))
                         if n % 2 != 0:
                                 juegoppt.pptdificil(n)
-                                break
+                                loop = input("¿Desea volver a jugar? (y/n): ")
+                                loop = loop.lower() 
+                                if loop =="y":
+                                    continue
+                                else:
+                                    print("Gracias por jugar!")
+                                    break
                         else: 
                                 print("El numero de juegos en la serie debe de ser impar, intente de nuevo\n") 
                 elif opt == 3:
                         n = int(input("Ingrese cuantos juegos quiere jugar en la serie (Impar): "))
                         if n % 2 != 0:
                                 juegoppt.pptls(n)
-                                break
+                                loop = input("¿Desea volver a jugar? (y/n): ")
+                                loop = loop.lower() 
+                                if loop =="y":
+                                    continue
+                                else:
+                                    print("Gracias por jugar!")
+                                    break
                         else: 
                                 print("El numero de juegos en la serie debe de ser impar, intente de nuevo\n") 
                 else:
                         print("Opción invalida, intente de nuevo")
-            break
+            loop = input("¿Desea volver al menu principal? (y/n): ")
+            loop = loop.lower()
+            if loop =="y":
+                continue
+            else:
+                print("Gracias por jugar!")
+                break
         elif opt == 3:
                 instructions_snake()
             
