@@ -1,3 +1,7 @@
+def main_memorama():
+
+    print("Bienvenido al juego de Memorama!")
+
 
 import random
 import time
