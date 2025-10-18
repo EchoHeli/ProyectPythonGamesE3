@@ -1,4 +1,4 @@
-    print("Bienvenido al juego de Memorama!")
+print("Bienvenido al juego de Memorama!")
 
 # archivo: Memorama/memorama.py
 # -------------------------------------------------------------
