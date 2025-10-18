@@ -86,7 +86,7 @@ def main():
                 continue
             else:
                 print("Gracias por jugar!")
-                break
+                continuarJugando = False
         elif opt == 3:
             Snake.instructions_snake()
 
