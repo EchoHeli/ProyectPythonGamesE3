@@ -11,7 +11,7 @@ def menu():
 3. Snake
 4. Tic Tac Toe
 5. Memorama
-5. Salir del juego """)
+6. Salir del juego """)
     
 def main():
     continuarJugando = True
@@ -153,14 +153,13 @@ def main():
 
         elif opt == 4:
             Tic_Tac_Toe.jugar()
-
         elif opt == 5:
-            print("Gracias por jugar. ¡Hasta luego!")
-            continuarJugando = False
-       elif opt == 6:
             import Memorama.memorama as Memorama
             print("Has elegido el juego de Memorama ")
             Memorama.jugar_memorama()
+        elif opt == 6:
+            print("Gracias por jugar. ¡Hasta luego!")
+            continuarJugando = False
 
 
         else:
