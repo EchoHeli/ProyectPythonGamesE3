@@ -54,9 +54,10 @@ import platform
 
 def instructions_snake():
     """ Lee y muestra la instrucciones del juego desde el archivo 'snake.txt'."""
-    instrucciones = open ("snake.txt","r")
-    reglas = instrucciones.read()
-    print (reglas)
+    with open("Snake\\snake.txt", "r") as file:
+        instrucciones = file.read()
+        print(instrucciones)
+
 def limpiar_pantalla():
     """Limpia la pantalla"""
     os.system("cls" if os.name == "nt" else "clear") # Para borrrar mi tablero anterior
