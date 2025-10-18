@@ -209,6 +209,3 @@ def menu():
             print(" Opción inválida. Intenta de nuevo.")
 
 
-# Ejecutar programa
-if __name__ == "__main__":
-    menu()
