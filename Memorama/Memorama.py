@@ -1,4 +1,7 @@
 
+import random
+import time
+
 def generar_matriz_cartas(num_pares):
     """
     Genera una matriz (lista de listas) de cartas con pares duplicados y mezclados.
