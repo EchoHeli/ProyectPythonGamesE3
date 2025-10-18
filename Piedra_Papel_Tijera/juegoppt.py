@@ -94,13 +94,13 @@ def comp2(result): # Función para la dificultad dificil que elige la jugada de 
                 rand = random.randint(1,3)
                 return rand
 def vp(): # Función para pedir el valor al jugador
-        valorPlayer = str(input("Elije Piedra, Papel, o Tijera: "))
+        valorPlayer = str(input("Elige Piedra, Papel, o Tijera: "))
         valorPlayer = valorPlayer.lower()
         valorPlayer = valorPlayer.replace(" ","")
         return(valorPlayer)
 
 def vppptls(): # Función para pedir el valor al jugador en el modo lagarto spock
-        valorPlayer = input("Elije Piedra, Papel, Tijera, Lagarto, Spock: ") 
+        valorPlayer = input("Elige Piedra, Papel, Tijera, Lagarto, Spock: ") 
         valorPlayer = valorPlayer.lower()
         valorPlayer = valorPlayer.replace(" ","")
         return(valorPlayer)
