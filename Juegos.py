@@ -19,17 +19,18 @@ def main():
             opt2 = opt2.lower()
             while True:
                 if opt2 == "n":
-                     Juegoahorcado.main()
+                    Juegoahorcado.main()
+                    
                     loop = input("¿Desea volver al menu principal? (y/n): ")
                     loop = lopp.lower()
                     if loop =="y":
                         continue
                     else:
                         print("Gracias por jugar!")
-                    break
+                        break
                 else:
                     print("Opción incorrecta, intente de nuevo\n")
-            break
+                    break
         elif opt == 2:
             juegoppt.menuppt()
             opt = int(input(""))
