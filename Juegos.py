@@ -157,8 +157,11 @@ def main():
         elif opt == 5:
             print("Gracias por jugar. ¡Hasta luego!")
             continuarJugando = False
-        elif opt == 5:
-             Memorama.main_memorama()
+       elif opt == 6:
+            import Memorama.memorama as Memorama
+            print("Has elegido el juego de Memorama ")
+            Memorama.jugar_memorama()
+
 
         else:
             print("Opción incorrecta, intente de nuevo\n")
