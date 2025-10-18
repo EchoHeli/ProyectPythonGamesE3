@@ -1,5 +1,5 @@
 import random 
-def comparacion(valorPlayer,valorComputer):
+def comparacion(valorPlayer,valorComputer): # 1 piedra 2 papel 3 tijera 4 lagarto 5 spock, Se realiza la comparación entre el valor del jugador y el de la computadora
     if valorComputer == 1:
         if valorPlayer == "piedra":
                 print("Usted escogió piedra, la computadora también, empate.\n")
@@ -80,8 +80,10 @@ def comparacion(valorPlayer,valorComputer):
             elif valorPlayer == "spock":
                 print("Usted escogió spock, la computadora tambien, empate.\n")
                 return(55)
-                
-def comp2(result):
+victoria = [12,23,31,15,24,35,41,43,52,54]
+derrota = [21,32,13,14,25,34,42,45,51,53]
+empate = [11,22,33,44,55]                
+def comp2(result): # Función para la dificultad dificil que elige la jugada de la computadora en base a la jugada anterior del jugador
         if result in (12,21):
                         return 3
         elif result in (13,31):
@@ -91,19 +93,19 @@ def comp2(result):
         elif result in (11,22,33):
                 rand = random.randint(1,3)
                 return rand
-def vp():
+def vp(): # Función para pedir el valor al jugador
         valorPlayer = str(input("Elije Piedra, Papel, o Tijera: "))
         valorPlayer = valorPlayer.lower()
         valorPlayer = valorPlayer.replace(" ","")
         return(valorPlayer)
 
-def vppptls():
+def vppptls(): # Función para pedir el valor al jugador en el modo lagarto spock
         valorPlayer = input("Elije Piedra, Papel, Tijera, Lagarto, Spock: ") 
         valorPlayer = valorPlayer.lower()
         valorPlayer = valorPlayer.replace(" ","")
         return(valorPlayer)
 
-def resultSerie(player,computer,tie):
+def resultSerie(player,computer,tie): # Función para mostrar el resultado final de la serie
         if player > computer:
                 print(f"Usted ganó {player} juegos mientras que la computadora ganó {computer} juegos, ganó la serie!")
         elif computer > player:
@@ -113,7 +115,7 @@ def resultSerie(player,computer,tie):
         else:
                 print(f"Usted y la computadora empataron todos los juegos ({tie}) en la serie, empate!")
 
-def ppt(n):
+def ppt(n): # Función para el modo normal de piedra papel tijera
     computer = 0
     player = 0
     tie = 0
@@ -123,15 +125,15 @@ def ppt(n):
         while valorPlayer not in ("piedra","papel","tijera"):
                 valorPlayer = vp()
         result = comparacion(valorPlayer,computerRandom)
-        if result in (31,23,12):
+        if result in victoria:
                 player += 1
-        elif result in (32,21,13):
+        elif result in derrota:
                 computer += 1
-        else:
+        elif result in empate:
                 tie += 1
     resultSerie(player,computer,tie)
 
-def pptdificil(n):
+def pptdificil(n): # Función para el modo dificil de piedra papel tijera
         computer = 0
         player = 0
         tie = 0
@@ -146,13 +148,13 @@ def pptdificil(n):
                         else:
                                 print("Opción incorrecta, intente de nuevo")
                 result = comparacion(valorPlayer,computerRandom)
-                if result in (31,23,12):
+                if result in victoria:
                         player += 1
                         cont += 1
-                elif result in (32,21,13):
+                elif result in derrota:
                         computer += 1
                         cont += 1
-                elif result in (11,22,33):
+                elif result in empate:
                         tie += 1
                         cont += 1
         res = comp2(result)
@@ -165,16 +167,16 @@ def pptdificil(n):
                         else:
                                 print("Opción incorrecta, intente de nuevo")
                 resultdificil = comparacion(valorPlayer,res) 
-                if resultdificil in (31,23,12):
+                if resultdificil in victoria:
                        player += 1
-                elif resultdificil in (32,21,13):
-                        computer += 1
-                elif resultdificil in (11,22,33):
+                elif resultdificil in derrota:
+                        computer += 1 
+                elif resultdificil in empate: 
                         tie += 1
                 res = comp2(resultdificil)
         resultSerie(player,computer,tie)
 
-def pptls(n):
+def pptls(n): # Función para el modo lagarto spock de piedra papel tijera
         computer = 0
         player = 0
         tie = 0
@@ -182,23 +184,24 @@ def pptls(n):
                 computerRandom = random.randint(1,5)
                 valorPlayer = ""
                 while valorPlayer not in ("piedra","papel","tijera","lagarto","spock"):
-                        valorPlayer = vp()
+                        valorPlayer = vppptls()
                         if valorPlayer in ("piedra","papel","tijera","lagarto","spock"):
                                 break
                         else:
                                 print("Opción incorrecta, intente de nuevo")
-                result = comparacion(valorPlayer,computerRandom)
-                if result in (31,23,12,15,24,35,41,43,52,54):
+                result = comparacion(valorPlayer,computerRandom) 
+                if result in victoria:
                         player += 1
-                elif result in (13,14,21,25,32,34,42,45,51,53):
+                elif result in derrota:
                         computer += 1
-                else:
+                elif result in empate:
                         tie += 1
         resultSerie(player,computer,tie)
-
-def menuppt():
-        print("""Elige una opción:
-1. Piedra Papel Tijera
-2. Piedra Papel Tijera (Dificil)
-3. Piedra Papel Tijera Lagarto Spock""")
+file = open("MenuGames.txt","a")
+file.write("Elige una opción:\n1. Piedra Papel Tijera\n2. Piedra Papel Tijera (Dificil)\n3. Piedra Papel Tijera Lagarto Spock\n")
+file.close()
+def menuppt(): # Menú del juego
+        file = open("MenuGames.txt","r")
+        print(file.read()) 
+        file.close()     
 
