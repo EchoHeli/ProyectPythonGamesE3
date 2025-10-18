@@ -19,7 +19,7 @@ def main():
             opt2 = opt2.lower()
             while True:
                 if opt2 == "n":
-                     Ahorcado.main()
+                     Juegoahorcado.main()
                     break
                 else:
                     print("Opción incorrecta, intente de nuevo\n")
