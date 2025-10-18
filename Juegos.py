@@ -10,6 +10,7 @@ def menu():
 2. Piedra Papel Tijera
 3. Snake
 4. Tic Tac Toe
+5. Memorama
 5. Salir del juego """)
     
 def main():
@@ -156,6 +157,9 @@ def main():
         elif opt == 5:
             print("Gracias por jugar. ¡Hasta luego!")
             continuarJugando = False
+        elif opt == 5:
+             Memorama.main_memorama()
+
         else:
             print("Opción incorrecta, intente de nuevo\n")
 
@@ -165,5 +169,6 @@ def main():
         if (RespuestaContinuarJugando == 'no'):
             print("Gracias por jugar. ¡Hasta luego!")
             continuarJugando = False
+
 
 main()  
