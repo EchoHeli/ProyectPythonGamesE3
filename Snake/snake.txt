@@ -1,0 +1,14 @@
+  REGLAS DEL JUEGO
+    Para moverte usa w,s,a,d de tu teclado:
+    w - Ariba
+    s - Abajo
+    a - Izquierda
+    d - Derecha
+    Usa solo minusculas
+    Para moverte escribe (Letra) (numero de espacios que deseas moverte)
+    Ej. s 4, w 3, a 6, d 1
+    Come el * para que tu serpiente cresca
+    + es la cabeza de tu serpiente y cuando comas un * tu serpiente gana un -
+    Tienes que crecer hasta llenar el tablero
+    NO puedes chocar con el limite, ni contra ti mismo
+    ¡MUCHA SUERTE!
