@@ -197,11 +197,11 @@ def pptls(n): # Función para el modo lagarto spock de piedra papel tijera
                 elif result in empate:
                         tie += 1
         resultSerie(player,computer,tie)
-file = open("MenuGames.txt","a")
+file = open("Menuppt.txt","a")
 file.write("Elige una opción:\n1. Piedra Papel Tijera\n2. Piedra Papel Tijera (Dificil)\n3. Piedra Papel Tijera Lagarto Spock\n")
 file.close()
 def menuppt(): # Menú del juego
-        file = open("MenuGames.txt","r")
+        file = open("Menuppt.txt","r")
         print(file.read()) 
         file.close()     
 
