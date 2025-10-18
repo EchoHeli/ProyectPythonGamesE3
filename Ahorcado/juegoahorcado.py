@@ -1,6 +1,6 @@
 import random
 
-#Datos del juego
+# Datos del juego
 PALABRAS = {
     "facil": ["sol", "luna", "casa", "gato", "perro", "arbol"],
     "medio": ["python", "computadora", "monitor", "raton", "teclado"],
@@ -33,11 +33,8 @@ def seleccionar_nivel():
         else:
             print("Nivel inválido. Intenta de nuevo.")
 
-#Funciones con archivos
+# Funciones con archivos
 def mostrar_registro():
-    """
-    Muestra el contenido del archivo registro.txt (si tiene información).
-    """
     archivo = open("registro.txt", "r")   # Abre el archivo en modo lectura
     contenido = archivo.read()
     if len(contenido) > 0:
@@ -48,21 +45,18 @@ def mostrar_registro():
     archivo.close()
 
 def guardar_palabra_no_adivinada(palabra):
-    """
-    Guarda la palabra no adivinada en un archivo de texto.
-    """
     archivo = open("registro.txt", "a")   # Abre en modo agregar
     archivo.write(palabra + "\n")
     archivo.close()
 
-# Función principal del juego
-def jugar_ahorcado():
-    print("¡Bienvenido al Ahorcado con archivo de registro!")
+#Función principal (todo dentro del main)
+def main():
+    print("¡Bienvenido al Ahorcado con archivo de registro!\n")
 
-    # Mostrar registro (si ya existe)
+    # Mostrar registro (si ya existe o se crea vacío)
     print("\nIntentando abrir el archivo 'registro.txt'...\n")
     archivo = open("registro.txt", "a+")  # Modo lectura y escritura (crea si no existe)
-    archivo.seek(0)                      
+    archivo.seek(0)
     contenido = archivo.read()
     if len(contenido) > 0:
         print("Palabras no adivinadas anteriormente:")
@@ -71,7 +65,7 @@ def jugar_ahorcado():
         print("No hay palabras registradas aún.")
     archivo.close()
 
-    # Lógica del juego 
+    # Lógica del juego
     nivel = seleccionar_nivel()
     intentos_restantes = {"facil": 8, "medio": 6, "dificil": 4}[nivel]
     palabra = seleccionar_palabra(nivel)
@@ -86,7 +80,7 @@ def jugar_ahorcado():
             print("Letras incorrectas:", end=" ")
             for letra in letras_incorrectas:
                 print(letra, end=" ")
-            print()  # salto de línea al final
+            print()
 
         letra = obtener_letra()
         estado = validar_entrada(letra, letras_adivinadas, letras_incorrectas)
@@ -109,11 +103,8 @@ def jugar_ahorcado():
             intentos_restantes -= 1
             print("La letra no está en la palabra.")
 
-    print(" Te quedaste sin intentos. La palabra era:", palabra)
+    print("Te quedaste sin intentos. La palabra era:", palabra)
     print("Guardando palabra en registro.txt...")
     guardar_palabra_no_adivinada(palabra)
     print("Palabra guardada exitosamente.")
-
-# Función main()
-def main():
-    jugar_ahorcado()
+    
